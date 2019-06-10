@@ -8,7 +8,9 @@ class AuthenticationBackend(ModelBackend):
     def authenticate(self, request, username=None, password=None, **kwargs):
         username = request.GET.get('username')
         password = request.GET.get('password')
-        if AuthenticationBackend._search_user(username, password) is None:
+        
+        # Check that the user can authenticate in the LDAP using its username and password
+        if AuthenticationBackend._check_LDAP_user_authentication(username, password) is None:
             return None
 
         try:
@@ -27,7 +29,7 @@ class AuthenticationBackend(ModelBackend):
             return None
 
     @staticmethod
-    def _search_user(username, password):
+    def _check_LDAP_user_authentication(username, password):
         try:
             server = Server('ldap.forumsys.com', get_info=ALL)
             connection = Connection(server,
