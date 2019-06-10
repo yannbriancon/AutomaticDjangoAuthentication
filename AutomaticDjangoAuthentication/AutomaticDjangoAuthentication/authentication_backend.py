@@ -1,6 +1,6 @@
 from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.models import User
-from ldap3 import Server, Connection, ALL
+from .services.ldap import get_LDAP_user
 
 
 class AuthenticationBackend(ModelBackend):
@@ -8,9 +8,9 @@ class AuthenticationBackend(ModelBackend):
     def authenticate(self, request, username=None, password=None, **kwargs):
         username = request.GET.get('username')
         password = request.GET.get('password')
-        
-        # Check that the user can authenticate in the LDAP using its username and password
-        if AuthenticationBackend._check_LDAP_user_authentication(username, password) is None:
+
+        # Get the user information from the LDAP if he can be authenticated
+        if get_LDAP_user(username, password) is None:
             return None
 
         try:
@@ -26,23 +26,4 @@ class AuthenticationBackend(ModelBackend):
         try:
             return User.objects.get(pk=user_id)
         except User.DoesNotExist:
-            return None
-
-    @staticmethod
-    def _check_LDAP_user_authentication(username, password):
-        try:
-            server = Server('ldap.forumsys.com', get_info=ALL)
-            connection = Connection(server,
-                                    'uid={username},dc=example,dc=com'.format(
-                                        username=username),
-                                    password, auto_bind=True)
-
-            connection.search('dc=example,dc=com', '({attr}={login})'.format(
-                attr='uid', login=username), attributes=['cn'])
-
-            if len(connection.response) == 0:
-                return None
-
-            return connection.response[0]
-        except:
             return None
