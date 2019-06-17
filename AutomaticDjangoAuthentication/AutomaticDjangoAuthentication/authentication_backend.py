@@ -18,7 +18,6 @@ class AuthenticationBackend(ModelBackend):
         except User.DoesNotExist:
             user = User(username=username)
             user.is_staff = True
-            user.is_superuser = True
             user.save()
         return user
 
