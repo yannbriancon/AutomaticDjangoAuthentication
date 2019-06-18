@@ -4,4 +4,4 @@ This project shows how to automatically log in users in Django Admin using an ex
 
 This concrete example is based on an LDAP server authentication using the public LDAP server furnished by [forumsys](https://www.forumsys.com/tutorials/integration-how-to/ldap/online-ldap-test-server/).
 
-I wrote this tutorial to show how to use and customize the project with complex systems like Kerberos and Active Directory.
+I wrote [this tutorial](https://medium.com/sipios/automatic-login-django-ldap-authentication-tutorial-91cbb9d5bf71) to show how to use and customize the project with complex systems like Kerberos and Active Directory.
