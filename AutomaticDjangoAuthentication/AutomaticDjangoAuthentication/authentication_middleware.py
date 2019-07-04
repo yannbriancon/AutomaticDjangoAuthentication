@@ -6,7 +6,7 @@ from django.http import HttpResponseForbidden
 class AutomaticUserLoginMiddleware(MiddlewareMixin):
 
     def process_view(self, request, view_func, view_args, view_kwargs):
-        if not AutomaticUserLoginMiddleware._is_user_authenticated(request):
+        if request.path == "/admin/" and not AutomaticUserLoginMiddleware._is_user_authenticated(request):
             user = auth.authenticate(request)
             if user is None:
                 return HttpResponseForbidden()
