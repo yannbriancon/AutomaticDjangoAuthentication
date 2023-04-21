@@ -27,31 +27,37 @@
         "ldap3": {
             "hashes": [
                 "sha256:0533eefc18d5ce0532f07fe1ce4e1f27128e1073845a6bf39fef2c828a401bb8",
-                "sha256:a92e380a0265963dc5507580ecd51eb84677e00c3d7800517b6442ef046f6ece"
+                "sha256:96daaa1dc3c5c82bdf625443e03179ad93f783043395ec293f5ce4301513774f",
+                "sha256:9f1291c43d5895ce42e4fdf0d19060d746a7ed685010e6917728848ca06597f8",
+                "sha256:a92e380a0265963dc5507580ecd51eb84677e00c3d7800517b6442ef046f6ece",
+                "sha256:e775a64638569d6bb9c827c02e8e3d34a5e52507eb6e6f66e9d762b205feab7e",
+                "sha256:f0c376b61a629b74407952d8de5664ce1a261c6da23079f3e1a81440114470cf"
             ],
             "index": "pypi",
             "version": "==2.6"
         },
         "pyasn1": {
             "hashes": [
-                "sha256:da2420fe13a9452d8ae97a0e478adde1dee153b11ba832a95b223a2ba01c10f7",
-                "sha256:da6b43a8c9ae93bc80e2739efb38cc776ba74a886e3e9318d65fe81a8b8a2c6e"
+                "sha256:87a2121042a1ac9358cabcaf1d07680ff97ee6404333bacca15f76aa8ad01a57",
+                "sha256:97b7290ca68e62a832558ec3976f15cbf911bf5d7c7039d8b861c2a0ece69fde"
             ],
-            "version": "==0.4.5"
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4, 3.5'",
+            "version": "==0.5.0"
         },
         "pytz": {
             "hashes": [
-                "sha256:303879e36b721603cc54604edcac9d20401bdbe31e1e4fdee5b9f98d5d31dfda",
-                "sha256:d747dd3d23d77ef44c6a3526e274af6efeb0a6f1afd5a69ba4d5be4098c8e141"
+                "sha256:1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588",
+                "sha256:a151b3abb88eda1d4e34a9814df37de2a80e301e68ba0fd856fb9b46bfbbbffb"
             ],
-            "version": "==2019.1"
+            "version": "==2023.3"
         },
         "sqlparse": {
             "hashes": [
-                "sha256:40afe6b8d4b1117e7dff5504d7a8ce07d9a1b15aeeade8a2d10f130a834f8177",
-                "sha256:7c3dca29c022744e95b547e867cee89f4fce4373f3549ccd8797d8eb52cdb873"
+                "sha256:5430a4fe2ac7d0f93e66f1efc6e1338a41884b7ddf2a350cedd20ccc4d9d28f3",
+                "sha256:d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"
             ],
-            "version": "==0.3.0"
+            "index": "pypi",
+            "version": "==0.4.4"
         }
     },
     "develop": {}
